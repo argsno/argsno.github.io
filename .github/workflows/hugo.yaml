@@ -1,0 +1,1281 @@
+➜ ~ cd Projects
+➜ Projects git clone hugo new site
+➜ Projects hugo new site hugo-blog
+Congratulations! Your new Hugo site was created in /Users/argsno/Projects/hugo-blog.
+
+Just a few more steps...
+
+1. Change the current directory to /Users/argsno/Projects/hugo-blog.
+2. Create or install a theme:
+   - Create a new theme with the command "hugo new theme <THEMENAME>"
+   - Install a theme from https://themes.gohugo.io/
+3. Edit hugo.toml, setting the "theme" property to the theme name.
+4. Create new content with the command "hugo new content <SECTIONNAME>/<FILENAME>.<FORMAT>".
+5. Start the embedded web server with the command "hugo server --buildDrafts".
+
+See documentation at https://gohugo.io/.
+➜ Projects cd hugo-blog
+➜ hugo-blog hugo new theme
+➜ hugo-blog git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
+
+Cloning into 'themes/PaperMod'...
+remote: Enumerating objects: 131, done.
+remote: Counting objects: 100% (131/131), done.
+remote: Compressing objects: 100% (110/110), done.
+remote: Total 131 (delta 30), reused 53 (delta 15), pack-reused 0
+Receiving objects: 100% (131/131), 260.13 KiB | 1.18 MiB/s, done.
+Resolving deltas: 100% (30/30), done.
+➜ hugo-blog ls
+archetypes content    hugo.toml  layouts    themes
+assets     data       i18n       static
+➜ hugo-blog ls themes/PaperMod
+LICENSE    assets     i18n       layouts
+README.md  go.mod     images     theme.toml
+➜ hugo-blog git init
+Initialized empty Git repository in /Users/argsno/Projects/hugo-blog/.git/
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	archetypes/
+	hugo.toml
+	themes/
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜ hugo-blog (main) ✗ rm -r themes/PaperMod
+override r--r--r-- argsno/staff for themes/PaperMod/.git/objects/pack/pack-c670fe9c9d63bc3caff1350d87cef73c7d281461.idx? ^C
+➜ hugo-blog (main) ✗ rm -rf themes/PaperMod
+➜ hugo-blog (main) ✗ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+
+Cloning into '/Users/argsno/Projects/hugo-blog/themes/PaperMod'...
+remote: Enumerating objects: 131, done.
+remote: Counting objects: 100% (131/131), done.
+remote: Compressing objects: 100% (110/110), done.
+remote: Total 131 (delta 30), reused 53 (delta 15), pack-reused 0
+Receiving objects: 100% (131/131), 260.13 KiB | 1.01 MiB/s, done.
+Resolving deltas: 100% (30/30), done.
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   themes/PaperMod
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	archetypes/
+	hugo.toml
+
+➜ hugo-blog (main) ✗ git submodule update --init --recursive # needed when you reclone your repo (submodules may not get cloned automatically)
+
+➜ hugo-blog (main) ✗ git submodule update --remote --merge
+
+➜ hugo-blog (main) ✗ code .
+➜ hugo-blog (main) ✗ hugo
+Start building sites …
+hugo v0.119.0-b84644c008e0dc2c4b67bd69cccf87a41a03937e+extended darwin/amd64 BuildDate=2023-09-24T15:20:17Z VendorInfo=brew
+
+
+                   | EN
+-------------------+-----
+  Pages            |  7
+  Paginator pages  |  0
+  Non-page files   |  0
+  Static files     |  0
+  Processed images |  0
+  Aliases          |  1
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Total in 85 ms
+➜ hugo-blog (main) ✗ hugo server
+Watching for changes in /Users/argsno/Projects/hugo-blog/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /Users/argsno/Projects/hugo-blog/hugo.toml
+Start building sites …
+hugo v0.119.0-b84644c008e0dc2c4b67bd69cccf87a41a03937e+extended darwin/amd64 BuildDate=2023-09-24T15:20:17Z VendorInfo=brew
+
+
+                   | EN
+-------------------+-----
+  Pages            |  7
+  Paginator pages  |  0
+  Non-page files   |  0
+  Static files     |  0
+  Processed images |  0
+  Aliases          |  1
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Built in 23 ms
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+^C%
+➜ hugo-blog (main) ✗ cp -r ../blog/content/post content
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   themes/PaperMod
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.hugo_build.lock
+	archetypes/
+	content/
+	hugo.toml
+	public/
+
+➜ hugo-blog (main) ✗ ls content
+post
+➜ hugo-blog (main) ✗
+➜ hugo-blog (main) ✗ hugo server
+Watching for changes in /Users/argsno/Projects/hugo-blog/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /Users/argsno/Projects/hugo-blog/hugo.toml
+Start building sites …
+hugo v0.119.0-b84644c008e0dc2c4b67bd69cccf87a41a03937e+extended darwin/amd64 BuildDate=2023-09-24T15:20:17Z VendorInfo=brew
+
+
+                   | EN
+-------------------+-----
+  Pages            | 43
+  Paginator pages  |  2
+  Non-page files   |  0
+  Static files     |  0
+  Processed images |  0
+  Aliases          | 10
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Built in 98 ms
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:22:28.278 +0800
+ERROR Failed to reload config: failed to load config: "/Users/argsno/Projects/hugo-blog/hugo.toml:6:7": unmarshal failed: toml: expected character =
+Rebuilt in 8 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:22:41.277 +0800
+Rebuilt in 213 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:24:31.278 +0800
+ERROR Failed to reload config: failed to load config: "/Users/argsno/Projects/hugo-blog/hugo.toml:7:13": unmarshal failed: toml: incomplete number
+Rebuilt in 5 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:24:59.686 +0800
+ERROR render: failed to render pages: render of "home" failed: "/Users/argsno/Projects/hugo-blog/themes/PaperMod/layouts/_default/list.html:51:4": execute of template failed: template: _default/list.html:51:4: executing "main" at <partial "home_info.html" .>: error calling partial: "/Users/argsno/Projects/hugo-blog/themes/PaperMod/layouts/partials/home_info.html:4:15": execute of template failed: template: partials/home_info.html:4:15: executing "partials/home_info.html" at <.Title>: can't evaluate field Title in type []interface {}
+Rebuilt in 208 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:26:20.687 +0800
+Rebuilt in 233 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:28:48.186 +0800
+Rebuilt in 187 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:29:14.187 +0800
+Rebuilt in 167 ms
+
+Change of config file detected, rebuilding site.
+2023-09-28 16:29:46.186 +0800
+Rebuilt in 180 ms
+^C%
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   themes/PaperMod
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.hugo_build.lock
+	archetypes/
+	content/
+	hugo.toml
+	public/
+
+➜ hugo-blog (main) ✗ gaa
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   .hugo_build.lock
+	new file:   archetypes/default.md
+	new file:   content/post/DAGScheduler.md
+	new file:   "content/post/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/post/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/post/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/post/Filter,Interceptor.md
+	new file:   content/post/Future.md
+	new file:   content/post/Guava Cache - expire vs refresh.md
+	new file:   content/post/Introduction to Apache ZooKeeper.md
+	new file:   "content/post/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/post/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/post/Java Tools.md
+	new file:   content/post/Java-GC.md
+	new file:   content/post/LeetCode-124.md
+	new file:   content/post/LeetCode-206.md
+	new file:   content/post/LeetCode-92.md
+	new file:   content/post/Spring MVC - Controller vs RestController.md
+	new file:   content/post/Spring MVC - DispatcherServlet.md
+	new file:   content/post/Spring MVC - Request Process.md
+	new file:   content/post/Tree Traverse.md
+	new file:   content/post/dianping-search-deeplearning.md
+	new file:   content/post/java-classloader.md
+	new file:   content/post/java-runtime-data.md
+	new file:   content/post/myBatis - Questions.md
+	new file:   "content/post/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/post/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/post/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   public/404.html
+	new file:   public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css
+	new file:   public/categories/index.html
+	new file:   public/categories/index.xml
+	new file:   public/index.html
+	new file:   public/index.xml
+	new file:   public/page/1/index.html
+	new file:   public/sitemap.xml
+	new file:   public/tags/index.html
+	new file:   public/tags/index.xml
+	new file:   themes/PaperMod
+
+➜ hugo-blog (main) ✗ ls content/
+post
+➜ hugo-blog (main) ✗ cd post
+➜ hugo-blog (main) ✗ cd content
+➜ content (main) ✗ mv post posts
+➜ content (main) ✗ cd ..
+➜ hugo-blog (main) ✗ hugo server
+Watching for changes in /Users/argsno/Projects/hugo-blog/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /Users/argsno/Projects/hugo-blog/hugo.toml
+Start building sites …
+hugo v0.119.0-b84644c008e0dc2c4b67bd69cccf87a41a03937e+extended darwin/amd64 BuildDate=2023-09-24T15:20:17Z VendorInfo=brew
+
+
+                   | EN
+-------------------+-----
+  Pages            | 43
+  Paginator pages  |  2
+  Non-page files   |  0
+  Static files     |  0
+  Processed images |  0
+  Aliases          | 10
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Built in 106 ms
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+^C%
+➜ hugo-blog (main) ✗ git init
+Reinitialized existing Git repository in /Users/argsno/Projects/hugo-blog/.git/
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   .hugo_build.lock
+	new file:   archetypes/default.md
+	new file:   content/post/DAGScheduler.md
+	new file:   "content/post/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/post/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/post/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/post/Filter,Interceptor.md
+	new file:   content/post/Future.md
+	new file:   content/post/Guava Cache - expire vs refresh.md
+	new file:   content/post/Introduction to Apache ZooKeeper.md
+	new file:   "content/post/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/post/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/post/Java Tools.md
+	new file:   content/post/Java-GC.md
+	new file:   content/post/LeetCode-124.md
+	new file:   content/post/LeetCode-206.md
+	new file:   content/post/LeetCode-92.md
+	new file:   content/post/Spring MVC - Controller vs RestController.md
+	new file:   content/post/Spring MVC - DispatcherServlet.md
+	new file:   content/post/Spring MVC - Request Process.md
+	new file:   content/post/Tree Traverse.md
+	new file:   content/post/dianping-search-deeplearning.md
+	new file:   content/post/java-classloader.md
+	new file:   content/post/java-runtime-data.md
+	new file:   content/post/myBatis - Questions.md
+	new file:   "content/post/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/post/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/post/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   public/404.html
+	new file:   public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css
+	new file:   public/categories/index.html
+	new file:   public/categories/index.xml
+	new file:   public/index.html
+	new file:   public/index.xml
+	new file:   public/page/1/index.html
+	new file:   public/sitemap.xml
+	new file:   public/tags/index.html
+	new file:   public/tags/index.xml
+	new file:   themes/PaperMod
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    content/post/DAGScheduler.md
+	deleted:    "content/post/Design Of A Modern Cache\342\200\224Part Deux.md"
+	deleted:    "content/post/ElasticSearch \345\205\245\351\227\250.md"
+	deleted:    "content/post/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	deleted:    content/post/Filter,Interceptor.md
+	deleted:    content/post/Future.md
+	deleted:    content/post/Guava Cache - expire vs refresh.md
+	deleted:    content/post/Introduction to Apache ZooKeeper.md
+	deleted:    "content/post/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	deleted:    "content/post/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	deleted:    content/post/Java Tools.md
+	deleted:    content/post/Java-GC.md
+	deleted:    content/post/LeetCode-124.md
+	deleted:    content/post/LeetCode-206.md
+	deleted:    content/post/LeetCode-92.md
+	deleted:    content/post/Spring MVC - Controller vs RestController.md
+	deleted:    content/post/Spring MVC - DispatcherServlet.md
+	deleted:    content/post/Spring MVC - Request Process.md
+	deleted:    content/post/Tree Traverse.md
+	deleted:    content/post/dianping-search-deeplearning.md
+	deleted:    content/post/java-classloader.md
+	deleted:    content/post/java-runtime-data.md
+	deleted:    content/post/myBatis - Questions.md
+	deleted:    "content/post/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	deleted:    "content/post/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	deleted:    "content/post/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	content/posts/
+
+➜ hugo-blog (main) ✗ gaa
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   .hugo_build.lock
+	new file:   archetypes/default.md
+	new file:   content/posts/DAGScheduler.md
+	new file:   "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/posts/Filter,Interceptor.md
+	new file:   content/posts/Future.md
+	new file:   content/posts/Guava Cache - expire vs refresh.md
+	new file:   content/posts/Introduction to Apache ZooKeeper.md
+	new file:   "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/posts/Java Tools.md
+	new file:   content/posts/Java-GC.md
+	new file:   content/posts/LeetCode-124.md
+	new file:   content/posts/LeetCode-206.md
+	new file:   content/posts/LeetCode-92.md
+	new file:   content/posts/Spring MVC - Controller vs RestController.md
+	new file:   content/posts/Spring MVC - DispatcherServlet.md
+	new file:   content/posts/Spring MVC - Request Process.md
+	new file:   content/posts/Tree Traverse.md
+	new file:   content/posts/dianping-search-deeplearning.md
+# Generated files by hugo
+	new file:   content/posts/java-classloader.md
+	new file:   content/posts/java-runtime-data.md
+	new file:   content/posts/myBatis - Questions.md
+	new file:   "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   public/404.html
+	new file:   public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css
+	new file:   public/categories/index.html
+	new file:   public/categories/index.xml
+	new file:   public/index.html
+	new file:   public/index.xml
+	new file:   public/page/1/index.html
+	new file:   public/sitemap.xml
+	new file:   public/tags/index.html
+	new file:   public/tags/index.xml
+	new file:   themes/PaperMod
+
+➜ hugo-blog (main) ✗ vi .gitignore
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   .hugo_build.lock
+	new file:   archetypes/default.md
+	new file:   content/posts/DAGScheduler.md
+	new file:   "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/posts/Filter,Interceptor.md
+	new file:   content/posts/Future.md
+	new file:   content/posts/Guava Cache - expire vs refresh.md
+	new file:   content/posts/Introduction to Apache ZooKeeper.md
+	new file:   "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/posts/Java Tools.md
+	new file:   content/posts/Java-GC.md
+	new file:   content/posts/LeetCode-124.md
+	new file:   content/posts/LeetCode-206.md
+	new file:   content/posts/LeetCode-92.md
+	new file:   content/posts/Spring MVC - Controller vs RestController.md
+	new file:   content/posts/Spring MVC - DispatcherServlet.md
+	new file:   content/posts/Spring MVC - Request Process.md
+	new file:   content/posts/Tree Traverse.md
+	new file:   content/posts/dianping-search-deeplearning.md
+	new file:   content/posts/java-classloader.md
+	new file:   content/posts/java-runtime-data.md
+	new file:   content/posts/myBatis - Questions.md
+	new file:   "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   public/404.html
+	new file:   public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css
+	new file:   public/categories/index.html
+	new file:   public/categories/index.xml
+	new file:   public/index.html
+	new file:   public/index.xml
+	new file:   public/page/1/index.html
+	new file:   public/sitemap.xml
+	new file:   public/tags/index.html
+	new file:   public/tags/index.xml
+	new file:   themes/PaperMod
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+➜ hugo-blog (main) ✗ gaa
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   .gitmodules
+	new file:   .hugo_build.lock
+	new file:   archetypes/default.md
+	new file:   content/posts/DAGScheduler.md
+	new file:   "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/posts/Filter,Interceptor.md
+	new file:   content/posts/Future.md
+	new file:   content/posts/Guava Cache - expire vs refresh.md
+	new file:   content/posts/Introduction to Apache ZooKeeper.md
+	new file:   "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/posts/Java Tools.md
+	new file:   content/posts/Java-GC.md
+	new file:   content/posts/LeetCode-124.md
+	new file:   content/posts/LeetCode-206.md
+	new file:   content/posts/LeetCode-92.md
+	new file:   content/posts/Spring MVC - Controller vs RestController.md
+	new file:   content/posts/Spring MVC - DispatcherServlet.md
+	new file:   content/posts/Spring MVC - Request Process.md
+	new file:   content/posts/Tree Traverse.md
+	new file:   content/posts/dianping-search-deeplearning.md
+	new file:   content/posts/java-classloader.md
+	new file:   content/posts/java-runtime-data.md
+	new file:   content/posts/myBatis - Questions.md
+	new file:   "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   public/404.html
+	new file:   public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css
+	new file:   public/categories/index.html
+	new file:   public/categories/index.xml
+	new file:   public/index.html
+	new file:   public/index.xml
+	new file:   public/page/1/index.html
+	new file:   public/sitemap.xml
+	new file:   public/tags/index.html
+	new file:   public/tags/index.xml
+	new file:   themes/PaperMod
+
+➜ hugo-blog (main) ✗ rm -rf .git
+➜ hugo-blog git init
+Initialized empty Git repository in /Users/argsno/Projects/hugo-blog/.git/
+➜ hugo-blog (main) ✗ gaa
+warning: in the working copy of 'themes/PaperMod/i18n/uz.yaml', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'themes/PaperMod/i18n/zh-tw.yaml', CRLF will be replaced by LF the next time Git touches it
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   .gitmodules
+	new file:   archetypes/default.md
+	new file:   content/posts/DAGScheduler.md
+	new file:   "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/posts/Filter,Interceptor.md
+	new file:   content/posts/Future.md
+	new file:   content/posts/Guava Cache - expire vs refresh.md
+	new file:   content/posts/Introduction to Apache ZooKeeper.md
+	new file:   "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/posts/Java Tools.md
+	new file:   content/posts/Java-GC.md
+	new file:   content/posts/LeetCode-124.md
+	new file:   content/posts/LeetCode-206.md
+	new file:   content/posts/LeetCode-92.md
+	new file:   content/posts/Spring MVC - Controller vs RestController.md
+	new file:   content/posts/Spring MVC - DispatcherServlet.md
+	new file:   content/posts/Spring MVC - Request Process.md
+	new file:   content/posts/Tree Traverse.md
+	new file:   content/posts/dianping-search-deeplearning.md
+	new file:   content/posts/java-classloader.md
+	new file:   content/posts/java-runtime-data.md
+	new file:   content/posts/myBatis - Questions.md
+	new file:   "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   themes/PaperMod/.github/ISSUE_TEMPLATE/bug_report.md
+	new file:   themes/PaperMod/.github/ISSUE_TEMPLATE/config.yml
+	new file:   themes/PaperMod/.github/ISSUE_TEMPLATE/new-blank-issue.md
+	new file:   themes/PaperMod/.github/PULL_REQUEST_TEMPLATE.md
+	new file:   themes/PaperMod/.github/stale.yml
+	new file:   themes/PaperMod/.github/workflows/gh-pages.yml
+	new file:   themes/PaperMod/LICENSE
+	new file:   themes/PaperMod/README.md
+	new file:   themes/PaperMod/assets/css/common/404.css
+	new file:   themes/PaperMod/assets/css/common/archive.css
+	new file:   themes/PaperMod/assets/css/common/footer.css
+	new file:   themes/PaperMod/assets/css/common/header.css
+	new file:   themes/PaperMod/assets/css/common/main.css
+	new file:   themes/PaperMod/assets/css/common/post-entry.css
+	new file:   themes/PaperMod/assets/css/common/post-single.css
+	new file:   themes/PaperMod/assets/css/common/profile-mode.css
+	new file:   themes/PaperMod/assets/css/common/search.css
+	new file:   themes/PaperMod/assets/css/common/terms.css
+	new file:   themes/PaperMod/assets/css/core/license.css
+	new file:   themes/PaperMod/assets/css/core/reset.css
+	new file:   themes/PaperMod/assets/css/core/theme-vars.css
+	new file:   themes/PaperMod/assets/css/core/zmedia.css
+	new file:   themes/PaperMod/assets/css/extended/blank.css
+	new file:   themes/PaperMod/assets/css/hljs/an-old-hope.min.css
+	new file:   themes/PaperMod/assets/css/includes/scroll-bar.css
+	new file:   themes/PaperMod/assets/js/fastsearch.js
+	new file:   themes/PaperMod/assets/js/fuse.basic.min.js
+	new file:   themes/PaperMod/assets/js/highlight.min.js
+	new file:   themes/PaperMod/assets/js/license.js
+	new file:   themes/PaperMod/go.mod
+	new file:   themes/PaperMod/i18n/ar.yaml
+	new file:   themes/PaperMod/i18n/be.yaml
+	new file:   themes/PaperMod/i18n/bg.yaml
+	new file:   themes/PaperMod/i18n/bn.yaml
+	new file:   themes/PaperMod/i18n/ca.yaml
+	new file:   themes/PaperMod/i18n/ckb.yaml
+	new file:   themes/PaperMod/i18n/da.yaml
+	new file:   themes/PaperMod/i18n/de.yaml
+	new file:   themes/PaperMod/i18n/el.yaml
+	new file:   themes/PaperMod/i18n/en.yaml
+	new file:   themes/PaperMod/i18n/eo.yaml
+	new file:   themes/PaperMod/i18n/es.yaml
+	new file:   themes/PaperMod/i18n/fa.yaml
+	new file:   themes/PaperMod/i18n/fr.yaml
+	new file:   themes/PaperMod/i18n/he.yaml
+	new file:   themes/PaperMod/i18n/hi.yaml
+	new file:   themes/PaperMod/i18n/hr.yaml
+	new file:   themes/PaperMod/i18n/hu.yaml
+	new file:   themes/PaperMod/i18n/id.yaml
+	new file:   themes/PaperMod/i18n/it.yaml
+	new file:   themes/PaperMod/i18n/ja.yaml
+	new file:   themes/PaperMod/i18n/ko.yaml
+	new file:   themes/PaperMod/i18n/ku.yaml
+	new file:   themes/PaperMod/i18n/mn.yaml
+	new file:   themes/PaperMod/i18n/ms.yaml
+	new file:   themes/PaperMod/i18n/nl.yaml
+	new file:   themes/PaperMod/i18n/pl.yaml
+	new file:   themes/PaperMod/i18n/pt.yaml
+	new file:   themes/PaperMod/i18n/ru.yaml
+	new file:   themes/PaperMod/i18n/sv.yaml
+	new file:   themes/PaperMod/i18n/th.yaml
+	new file:   themes/PaperMod/i18n/tr.yaml
+	new file:   themes/PaperMod/i18n/uk.yaml
+	new file:   themes/PaperMod/i18n/uz.yaml
+	new file:   themes/PaperMod/i18n/vi.yaml
+	new file:   themes/PaperMod/i18n/zh-tw.yaml
+	new file:   themes/PaperMod/i18n/zh.yaml
+	new file:   themes/PaperMod/images/screenshot.png
+	new file:   themes/PaperMod/images/tn.png
+	new file:   themes/PaperMod/layouts/404.html
+	new file:   themes/PaperMod/layouts/_default/_markup/render-image.html
+	new file:   themes/PaperMod/layouts/_default/archives.html
+	new file:   themes/PaperMod/layouts/_default/baseof.html
+	new file:   themes/PaperMod/layouts/_default/index.json
+	new file:   themes/PaperMod/layouts/_default/list.html
+	new file:   themes/PaperMod/layouts/_default/rss.xml
+	new file:   themes/PaperMod/layouts/_default/search.html
+	new file:   themes/PaperMod/layouts/_default/single.html
+	new file:   themes/PaperMod/layouts/_default/terms.html
+	new file:   themes/PaperMod/layouts/partials/anchored_headings.html
+	new file:   themes/PaperMod/layouts/partials/author.html
+	new file:   themes/PaperMod/layouts/partials/breadcrumbs.html
+	new file:   themes/PaperMod/layouts/partials/comments.html
+	new file:   themes/PaperMod/layouts/partials/cover.html
+	new file:   themes/PaperMod/layouts/partials/edit_post.html
+	new file:   themes/PaperMod/layouts/partials/extend_footer.html
+	new file:   themes/PaperMod/layouts/partials/extend_head.html
+	new file:   themes/PaperMod/layouts/partials/footer.html
+	new file:   themes/PaperMod/layouts/partials/head.html
+	new file:   themes/PaperMod/layouts/partials/header.html
+	new file:   themes/PaperMod/layouts/partials/home_info.html
+	new file:   themes/PaperMod/layouts/partials/index_profile.html
+	new file:   themes/PaperMod/layouts/partials/post_canonical.html
+	new file:   themes/PaperMod/layouts/partials/post_meta.html
+	new file:   themes/PaperMod/layouts/partials/post_nav_links.html
+	new file:   themes/PaperMod/layouts/partials/share_icons.html
+	new file:   themes/PaperMod/layouts/partials/social_icons.html
+	new file:   themes/PaperMod/layouts/partials/svg.html
+	new file:   themes/PaperMod/layouts/partials/templates/opengraph.html
+	new file:   themes/PaperMod/layouts/partials/templates/schema_json.html
+	new file:   themes/PaperMod/layouts/partials/templates/twitter_cards.html
+	new file:   themes/PaperMod/layouts/partials/toc.html
+	new file:   themes/PaperMod/layouts/partials/translation_list.html
+	new file:   themes/PaperMod/layouts/robots.txt
+	new file:   themes/PaperMod/layouts/shortcodes/collapse.html
+	new file:   themes/PaperMod/layouts/shortcodes/figure.html
+	new file:   themes/PaperMod/layouts/shortcodes/inTextImg.html
+	new file:   themes/PaperMod/layouts/shortcodes/ltr.html
+	new file:   themes/PaperMod/layouts/shortcodes/rawhtml.html
+	new file:   themes/PaperMod/layouts/shortcodes/rtl.html
+	new file:   themes/PaperMod/theme.toml
+
+➜ hugo-blog (main) ✗ git remote add origin git@github.com:argsno/blog.git
+git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git remote add origin git@github.com:argsno/blog.git
+git push -u origin main
+➜ hugo-blog (main) ✗ git push -f -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git push -f
+error: src refspec refs/heads/main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git remote -vv
+origin	git@github.com:argsno/blog.git (fetch)
+origin	git@github.com:argsno/blog.git (push)
+➜ hugo-blog (main) ✗ git push -f
+error: src refspec refs/heads/main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git push -f origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git push -f
+error: src refspec refs/heads/main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ more ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDo1CMQqCkSoUb5wSDmn+CQGgoQ8bZymoWgZE/M4M2N6Q0/oVqs5HW1CyRoAH3VDBVOIMAALANE6ppSELEFEFhm12yOKVkJzHD9Ymwpi/Vy98lFw3mmpyfAKXw4MkJk2jF4uq73U14xvMxPA1B2rNrKLBhhESBd4mIiW4X7iicHcnMWV6qYqtR2SeYKroLAw+TYyro8XpUPL5KW+w82l4fCtFRfaJrAk1XeFPcKmbU79CyvxRmZheHuPmI4Ic2WABmNpqY9bu64EPzLwW5FIaKWRm17hmx0Okin8BedfhU0PaYdbbsKeWWzGQM4iIszf0o7N23lYzy/1xfdg773YaMSLrNyLY4MRbJ9XTaqyfEccvAf4LzNjS4h/HWKMfgLDwkwC+p1iCchTWh87rKhCWVeH/zEL0RmfGs0Nju+t60tfTdnoQe6hvllkSjuqM46dPG9MucTh3KF3zupNB6Ktp7Tl4dK7k1GPEVJSbNk7vMGikXaJ4lVysm3JkpUg+5vqp8= argsno@MBP-C02FV01DMD6P-0024.local
+➜ hugo-blog (main) ✗ git push -f
+error: src refspec refs/heads/main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ git remote add origin git@github.com:argsno/hugo-blog.git
+git branch -M main
+git push -u origin main
+error: remote origin already exists.
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:argsno/blog.git'
+➜ hugo-blog (main) ✗ rm -rf .git
+➜ hugo-blog git init
+Initialized empty Git repository in /Users/argsno/Projects/hugo-blog/.git/
+➜ hugo-blog (main) ✗ git commit -m '2023-09-28 first commit'
+On branch main
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	.gitmodules
+	archetypes/
+	content/
+	hugo.toml
+	themes/
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜ hugo-blog (main) ✗ gaa
+warning: in the working copy of 'themes/PaperMod/i18n/uz.yaml', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'themes/PaperMod/i18n/zh-tw.yaml', CRLF will be replaced by LF the next time Git touches it
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   .gitmodules
+	new file:   archetypes/default.md
+	new file:   content/posts/DAGScheduler.md
+	new file:   "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/posts/Filter,Interceptor.md
+	new file:   content/posts/Future.md
+	new file:   content/posts/Guava Cache - expire vs refresh.md
+	new file:   content/posts/Introduction to Apache ZooKeeper.md
+	new file:   "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/posts/Java Tools.md
+	new file:   content/posts/Java-GC.md
+	new file:   content/posts/LeetCode-124.md
+	new file:   content/posts/LeetCode-206.md
+	new file:   content/posts/LeetCode-92.md
+	new file:   content/posts/Spring MVC - Controller vs RestController.md
+	new file:   content/posts/Spring MVC - DispatcherServlet.md
+	new file:   content/posts/Spring MVC - Request Process.md
+	new file:   content/posts/Tree Traverse.md
+	new file:   content/posts/dianping-search-deeplearning.md
+	new file:   content/posts/java-classloader.md
+	new file:   content/posts/java-runtime-data.md
+	new file:   content/posts/myBatis - Questions.md
+	new file:   "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   themes/PaperMod/.github/ISSUE_TEMPLATE/bug_report.md
+	new file:   themes/PaperMod/.github/ISSUE_TEMPLATE/config.yml
+	new file:   themes/PaperMod/.github/ISSUE_TEMPLATE/new-blank-issue.md
+	new file:   themes/PaperMod/.github/PULL_REQUEST_TEMPLATE.md
+	new file:   themes/PaperMod/.github/stale.yml
+	new file:   themes/PaperMod/.github/workflows/gh-pages.yml
+	new file:   themes/PaperMod/LICENSE
+	new file:   themes/PaperMod/README.md
+	new file:   themes/PaperMod/assets/css/common/404.css
+	new file:   themes/PaperMod/assets/css/common/archive.css
+	new file:   themes/PaperMod/assets/css/common/footer.css
+	new file:   themes/PaperMod/assets/css/common/header.css
+	new file:   themes/PaperMod/assets/css/common/main.css
+	new file:   themes/PaperMod/assets/css/common/post-entry.css
+	new file:   themes/PaperMod/assets/css/common/post-single.css
+	new file:   themes/PaperMod/assets/css/common/profile-mode.css
+	new file:   themes/PaperMod/assets/css/common/search.css
+	new file:   themes/PaperMod/assets/css/common/terms.css
+	new file:   themes/PaperMod/assets/css/core/license.css
+	new file:   themes/PaperMod/assets/css/core/reset.css
+	new file:   themes/PaperMod/assets/css/core/theme-vars.css
+	new file:   themes/PaperMod/assets/css/core/zmedia.css
+	new file:   themes/PaperMod/assets/css/extended/blank.css
+	new file:   themes/PaperMod/assets/css/hljs/an-old-hope.min.css
+	new file:   themes/PaperMod/assets/css/includes/scroll-bar.css
+	new file:   themes/PaperMod/assets/js/fastsearch.js
+	new file:   themes/PaperMod/assets/js/fuse.basic.min.js
+	new file:   themes/PaperMod/assets/js/highlight.min.js
+	new file:   themes/PaperMod/assets/js/license.js
+	new file:   themes/PaperMod/go.mod
+	new file:   themes/PaperMod/i18n/ar.yaml
+	new file:   themes/PaperMod/i18n/be.yaml
+	new file:   themes/PaperMod/i18n/bg.yaml
+	new file:   themes/PaperMod/i18n/bn.yaml
+	new file:   themes/PaperMod/i18n/ca.yaml
+	new file:   themes/PaperMod/i18n/ckb.yaml
+	new file:   themes/PaperMod/i18n/da.yaml
+	new file:   themes/PaperMod/i18n/de.yaml
+	new file:   themes/PaperMod/i18n/el.yaml
+	new file:   themes/PaperMod/i18n/en.yaml
+	new file:   themes/PaperMod/i18n/eo.yaml
+	new file:   themes/PaperMod/i18n/es.yaml
+	new file:   themes/PaperMod/i18n/fa.yaml
+	new file:   themes/PaperMod/i18n/fr.yaml
+	new file:   themes/PaperMod/i18n/he.yaml
+	new file:   themes/PaperMod/i18n/hi.yaml
+	new file:   themes/PaperMod/i18n/hr.yaml
+	new file:   themes/PaperMod/i18n/hu.yaml
+	new file:   themes/PaperMod/i18n/id.yaml
+	new file:   themes/PaperMod/i18n/it.yaml
+	new file:   themes/PaperMod/i18n/ja.yaml
+	new file:   themes/PaperMod/i18n/ko.yaml
+	new file:   themes/PaperMod/i18n/ku.yaml
+	new file:   themes/PaperMod/i18n/mn.yaml
+	new file:   themes/PaperMod/i18n/ms.yaml
+	new file:   themes/PaperMod/i18n/nl.yaml
+	new file:   themes/PaperMod/i18n/pl.yaml
+	new file:   themes/PaperMod/i18n/pt.yaml
+	new file:   themes/PaperMod/i18n/ru.yaml
+	new file:   themes/PaperMod/i18n/sv.yaml
+	new file:   themes/PaperMod/i18n/th.yaml
+	new file:   themes/PaperMod/i18n/tr.yaml
+	new file:   themes/PaperMod/i18n/uk.yaml
+	new file:   themes/PaperMod/i18n/uz.yaml
+	new file:   themes/PaperMod/i18n/vi.yaml
+	new file:   themes/PaperMod/i18n/zh-tw.yaml
+	new file:   themes/PaperMod/i18n/zh.yaml
+	new file:   themes/PaperMod/images/screenshot.png
+	new file:   themes/PaperMod/images/tn.png
+	new file:   themes/PaperMod/layouts/404.html
+	new file:   themes/PaperMod/layouts/_default/_markup/render-image.html
+	new file:   themes/PaperMod/layouts/_default/archives.html
+	new file:   themes/PaperMod/layouts/_default/baseof.html
+	new file:   themes/PaperMod/layouts/_default/index.json
+	new file:   themes/PaperMod/layouts/_default/list.html
+	new file:   themes/PaperMod/layouts/_default/rss.xml
+	new file:   themes/PaperMod/layouts/_default/search.html
+	new file:   themes/PaperMod/layouts/_default/single.html
+	new file:   themes/PaperMod/layouts/_default/terms.html
+	new file:   themes/PaperMod/layouts/partials/anchored_headings.html
+	new file:   themes/PaperMod/layouts/partials/author.html
+	new file:   themes/PaperMod/layouts/partials/breadcrumbs.html
+	new file:   themes/PaperMod/layouts/partials/comments.html
+	new file:   themes/PaperMod/layouts/partials/cover.html
+	new file:   themes/PaperMod/layouts/partials/edit_post.html
+	new file:   themes/PaperMod/layouts/partials/extend_footer.html
+	new file:   themes/PaperMod/layouts/partials/extend_head.html
+	new file:   themes/PaperMod/layouts/partials/footer.html
+	new file:   themes/PaperMod/layouts/partials/head.html
+	new file:   themes/PaperMod/layouts/partials/header.html
+	new file:   themes/PaperMod/layouts/partials/home_info.html
+	new file:   themes/PaperMod/layouts/partials/index_profile.html
+	new file:   themes/PaperMod/layouts/partials/post_canonical.html
+	new file:   themes/PaperMod/layouts/partials/post_meta.html
+	new file:   themes/PaperMod/layouts/partials/post_nav_links.html
+	new file:   themes/PaperMod/layouts/partials/share_icons.html
+	new file:   themes/PaperMod/layouts/partials/social_icons.html
+	new file:   themes/PaperMod/layouts/partials/svg.html
+	new file:   themes/PaperMod/layouts/partials/templates/opengraph.html
+	new file:   themes/PaperMod/layouts/partials/templates/schema_json.html
+	new file:   themes/PaperMod/layouts/partials/templates/twitter_cards.html
+	new file:   themes/PaperMod/layouts/partials/toc.html
+	new file:   themes/PaperMod/layouts/partials/translation_list.html
+	new file:   themes/PaperMod/layouts/robots.txt
+	new file:   themes/PaperMod/layouts/shortcodes/collapse.html
+	new file:   themes/PaperMod/layouts/shortcodes/figure.html
+	new file:   themes/PaperMod/layouts/shortcodes/inTextImg.html
+	new file:   themes/PaperMod/layouts/shortcodes/ltr.html
+	new file:   themes/PaperMod/layouts/shortcodes/rawhtml.html
+	new file:   themes/PaperMod/layouts/shortcodes/rtl.html
+	new file:   themes/PaperMod/theme.toml
+
+➜ hugo-blog (main) ✗ rm -rf .git
+➜ hugo-blog rm rf themes/PaperMod
+rm: rf: No such file or directory
+rm: themes/PaperMod: is a directory
+➜ hugo-blog rm -rf themes/PaperMod
+➜ hugo-blog git init
+Initialized empty Git repository in /Users/argsno/Projects/hugo-blog/.git/
+➜ hugo-blog (main) ✗ git sub
+➜ hugo-blog (main) ✗ hugo mod init
+Error: failed to load modules: module "PaperMod" not found in "/Users/argsno/Projects/hugo-blog/themes/PaperMod"; either add it as a Hugo Module or store it in "/Users/argsno/Projects/hugo-blog/themes".: module does not exist
+➜ hugo-blog (main) ✗ rm -rf .gitmodules
+➜ hugo-blog (main) ✗ hugo mod init
+Error: failed to load modules: module "PaperMod" not found in "/Users/argsno/Projects/hugo-blog/themes/PaperMod"; either add it as a Hugo Module or store it in "/Users/argsno/Projects/hugo-blog/themes".: module does not exist
+➜ hugo-blog (main) ✗
+➜ hugo-blog (main) ✗ hugo mod init https://github.com/adityatelange/hugo-PaperMod.git
+Error: failed to load modules: module "PaperMod" not found in "/Users/argsno/Projects/hugo-blog/themes/PaperMod"; either add it as a Hugo Module or store it in "/Users/argsno/Projects/hugo-blog/themes".: module does not exist
+➜ hugo-blog (main) ✗ ls
+archetypes content    hugo.toml  layouts    static
+assets     data       i18n       public     themes
+➜ hugo-blog (main) ✗ cd ..
+➜ Projects hugo new site hugo-blog
+➜ Projects cd hugo-blog
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	archetypes/
+	content/
+	hugo.toml
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜ hugo-blog (main) ✗ hugo mod get -u github.com/gohugoio/myShortcodes
+
+Error: failed to load modules: module "PaperMod" not found in "/Users/argsno/Projects/hugo-blog/themes/PaperMod"; either add it as a Hugo Module or store it in "/Users/argsno/Projects/hugo-blog/themes".: module does not exist
+➜ hugo-blog (main) ✗ grep -r PaperMod .
+./public/index.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./public/404.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./public/tags/index.html:        <a href="https://github.com/adityatelange/hugo-
+baseURL = 'https://argsno.github.io/'
+PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css:  PaperMod v7
+./public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css:  License: MIT https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE
+./public/categories/index.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./hugo.toml:theme = "PaperMod"
+➜ hugo-blog (main) ✗ more .gitignore
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
+➜ hugo-blog (main) ✗ vi hugo.toml
+➜ hugo-blog (main) ✗ grep -r PaperMod .
+./public/index.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./public/404.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./public/tags/index.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css:  PaperMod v7
+./public/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css:  License: MIT https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE
+./public/categories/index.html:        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+./hugo.toml:#theme = "PaperMod"
+➜ hugo-blog (main) ✗ grep -r PaperMod .
+➜ hugo-blog (main) ✗ hugo mod get -u
+➜ hugo-blog (main) ✗ hugo .
+hugo is the main command, used to build your Hugo site.
+
+Hugo is a Fast and Flexible Static Site Generator
+built with love by spf13 and friends in Go.
+
+Complete documentation is available at https://gohugo.io/.
+
+Usage:
+  hugo [flags]
+  hugo [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  config      Print the site configuration
+  convert     Convert your content to different formats
+  deploy      Deploy your site to a Cloud provider.
+  env         Print Hugo version and environment info
+  gen         A collection of several useful generators.
+  help        Help about any command
+  import      Import your site from others.
+  list        Listing out various types of content
+  mod         Various Hugo Modules helpers.
+  new         Create new content for your site
+  server      A high performance webserver
+  version     Print Hugo version and environment info
+
+Flags:
+  -b, --baseURL string             hostname (and path) to the root, e.g. https://spf13.com/
+  -D, --buildDrafts                include content marked as draft
+  -E, --buildExpired               include expired content
+  -F, --buildFuture                include content with publishdate in the future
+      --cacheDir string            filesystem path to cache directory
+      --cleanDestinationDir        remove files from destination not found in static directories
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -c, --contentDir string          filesystem path to content directory
+      --debug                      debug output
+  -d, --destination string         filesystem path to write files to
+      --disableKinds strings       disable different kind of pages (home, RSS etc.)
+      --enableGitInfo              add Git revision, date, author, and CODEOWNERS info to the pages
+  -e, --environment string         build environment
+      --forceSyncStatic            copy all files when static is changed.
+      --gc                         enable to run some cleanup tasks (remove unused cache files) after the build
+      --ignoreCache                ignores the cache directory
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+  -l, --layoutDir string           filesystem path to layout directory
+      --logLevel string            log level (debug|info|warn|error)
+      --minify                     minify any supported output format (HTML, XML etc.)
+      --noBuildLock                don't create .hugo_build.lock file
+      --noChmod                    don't sync permission mode of files
+      --noTimes                    don't sync modification time of files
+      --panicOnWarning             panic on first WARNING log
+      --poll string                set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+      --printI18nWarnings          print missing translations
+      --printMemoryUsage           print memory usage to screen at intervals
+      --printPathWarnings          print warnings on duplicate target paths etc.
+      --printUnusedTemplates       print warnings on unused templates.
+      --quiet                      build in quiet mode
+      --renderToMemory             render to memory (only useful for benchmark testing)
+  -s, --source string              filesystem path to read files relative from
+      --templateMetrics            display metrics about template executions
+      --templateMetricsHints       calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings              themes to use (located in /themes/THEMENAME/)
+      --themesDir string           filesystem path to themes directory
+      --trace file                 write trace to file (not useful in general)
+  -v, --verbose                    verbose output
+  -w, --watch                      watch filesystem for changes and recreate as needed
+
+Use "hugo [command] --help" for more information about a command.
+
+Error: command error: unknown command "." for "hugo"
+➜ hugo-blog (main) ✗ code .
+➜ hugo-blog (main) ✗ code .
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	archetypes/
+	content/
+	hugo.toml
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜ hugo-blog (main) ✗ ls
+archetypes content    hugo.toml  layouts    static
+assets     data       i18n       public     themes
+➜ hugo-blog (main) ✗ pwd
+/Users/argsno/Projects/hugo-blog
+➜ hugo-blog (main) ✗ ls
+archetypes content    hugo.toml  layouts    static
+assets     data       i18n       public     themes
+➜ hugo-blog (main) ✗ more hugo.toml
+baseURL = 'https://argsno.github.io/'
+languageCode = 'zh-cn'
+title = 'argsno'
+#theme = "PaperMod"
+
+[params.homeInfoParams]
+Title = "Hi there"
+Content = "Welcome to my blog..."
+
+[[params.socialIcons]]
+name = "github"
+url = "http://github.com/argsno"
+➜ hugo-blog (main) ✗ hugo mod init "https://github.com/adityatelange/hugo-PaperMod.git"
+➜ hugo-blog (main) ✗ hugo mod get -u
+Error: failed to load modules: module "github.com/adityatelange/hugo-PaperMod" not found in "/Users/argsno/Projects/hugo-blog/themes/github.com/adityatelange/hugo-PaperMod"; either add it as a Hugo Module or store it in "/Users/argsno/Projects/hugo-blog/themes".: module does not exist
+➜ hugo-blog (main) ✗ hugo mod init github.com/adityatelange/hugo-PaperMod
+
+Error: failed to load modules: module "github.com/adityatelange/hugo-PaperMod" not found in "/Users/argsno/Projects/hugo-blog/themes/github.com/adityatelange/hugo-PaperMod"; either add it as a Hugo Module or store it in "/Users/argsno/Projects/hugo-blog/themes".: module does not exist
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	archetypes/
+	content/
+	hugo.toml
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜ hugo-blog (main) ✗ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+git submodule update --init --recursive # needed when you reclone your repo (submodules may not get cloned automatically)
+Cloning into '/Users/argsno/Projects/hugo-blog/themes/PaperMod'...
+remote: Enumerating objects: 131, done.
+remote: Counting objects: 100% (131/131), done.
+remote: Compressing objects: 100% (111/111), done.
+remote: Total 131 (delta 30), reused 51 (delta 14), pack-reused 0
+Receiving objects: 100% (131/131), 260.06 KiB | 1.12 MiB/s, done.
+Resolving deltas: 100% (30/30), done.
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitmodules
+	new file:   themes/PaperMod
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	archetypes/
+	content/
+	hugo.toml
+
+➜ hugo-blog (main) ✗ gaa
+➜ hugo-blog (main) ✗ gst
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .gitignore
+	new file:   .gitmodules
+	new file:   archetypes/default.md
+	new file:   content/posts/DAGScheduler.md
+	new file:   "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+	new file:   "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+	new file:   "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+	new file:   content/posts/Filter,Interceptor.md
+	new file:   content/posts/Future.md
+	new file:   content/posts/Guava Cache - expire vs refresh.md
+	new file:   content/posts/Introduction to Apache ZooKeeper.md
+	new file:   "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+	new file:   "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+	new file:   content/posts/Java Tools.md
+	new file:   content/posts/Java-GC.md
+	new file:   content/posts/LeetCode-124.md
+	new file:   content/posts/LeetCode-206.md
+	new file:   content/posts/LeetCode-92.md
+	new file:   content/posts/Spring MVC - Controller vs RestController.md
+	new file:   content/posts/Spring MVC - DispatcherServlet.md
+	new file:   content/posts/Spring MVC - Request Process.md
+	new file:   content/posts/Tree Traverse.md
+	new file:   content/posts/dianping-search-deeplearning.md
+	new file:   content/posts/java-classloader.md
+	new file:   content/posts/java-runtime-data.md
+	new file:   content/posts/myBatis - Questions.md
+	new file:   "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+	new file:   "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+	new file:   "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+	new file:   hugo.toml
+	new file:   themes/PaperMod
+
+➜ hugo-blog (main) ✗ hugo server
+Watching for changes in /Users/argsno/Projects/hugo-blog/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /Users/argsno/Projects/hugo-blog/hugo.toml
+Start building sites …
+hugo v0.119.0-b84644c008e0dc2c4b67bd69cccf87a41a03937e+extended darwin/amd64 BuildDate=2023-09-24T15:20:17Z VendorInfo=brew
+
+
+                   | EN
+-------------------+-----
+  Pages            | 43
+  Paginator pages  |  2
+  Non-page files   |  0
+  Static files     |  0
+  Processed images |  0
+  Aliases          | 10
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Built in 111 ms
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+^C%
+➜ hugo-blog (main) ✗ git commit -m '2023-09-28 first commit'
+[main (root-commit) 4ce3ff4] 2023-09-28 first commit
+ 31 files changed, 3590 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .gitmodules
+ create mode 100644 archetypes/default.md
+ create mode 100644 content/posts/DAGScheduler.md
+ create mode 100644 "content/posts/Design Of A Modern Cache\342\200\224Part Deux.md"
+ create mode 100644 "content/posts/ElasticSearch \345\205\245\351\227\250.md"
+ create mode 100644 "content/posts/Elasticsearch\351\235\242\350\257\225\351\242\230\350\247\243\350\257\273.md"
+ create mode 100644 content/posts/Filter,Interceptor.md
+ create mode 100644 content/posts/Future.md
+ create mode 100644 content/posts/Guava Cache - expire vs refresh.md
+ create mode 100644 content/posts/Introduction to Apache ZooKeeper.md
+ create mode 100644 "content/posts/JVM\345\206\205\345\255\230\347\233\270\345\205\263\347\237\245\350\257\206.md"
+ create mode 100644 "content/posts/Java HashMap \346\272\220\347\240\201\350\247\243\346\236\220.md"
+ create mode 100644 content/posts/Java Tools.md
+ create mode 100755 content/posts/Java-GC.md
+ create mode 100644 content/posts/LeetCode-124.md
+ create mode 100644 content/posts/LeetCode-206.md
+ create mode 100644 content/posts/LeetCode-92.md
+ create mode 100644 content/posts/Spring MVC - Controller vs RestController.md
+ create mode 100644 content/posts/Spring MVC - DispatcherServlet.md
+ create mode 100644 content/posts/Spring MVC - Request Process.md
+ create mode 100644 content/posts/Tree Traverse.md
+ create mode 100644 content/posts/dianping-search-deeplearning.md
+ create mode 100644 content/posts/java-classloader.md
+ create mode 100644 content/posts/java-runtime-data.md
+ create mode 100644 content/posts/myBatis - Questions.md
+ create mode 100644 "content/posts/\345\206\231\346\227\245\345\277\227\347\232\204\351\202\243\344\272\233\344\272\213\345\204\277.md"
+ create mode 100644 "content/posts/\346\250\241\346\213\237\347\233\264\346\216\245\345\206\205\345\255\230\346\272\242\345\207\272.md"
+ create mode 100644 "content/posts/\347\256\227\346\263\225\347\262\276\350\277\233 - k-d\346\240\221.md"
+ create mode 100644 hugo.toml
+ create mode 160000 themes/PaperMod
+➜ hugo-blog (main) ✔ git push -f
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+➜ hugo-blog (main) ✔ git remote add origin git@github.com:argsno/blog.git
+git push -u origin main
+To github.com:argsno/blog.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:argsno/blog.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+  id-token: write
+
+concurrency:
+    env:
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
