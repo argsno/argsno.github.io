@@ -1,0 +1,12 @@
+baseURL = 'https://argsno.github.io/'
+languageCode = 'zh-cn'
+title = 'argsno'
+theme = "PaperMod"
+
+[params.homeInfoParams]
+Title = "Hi there"
+Content = "Welcome to my blog..."
+
+[[params.socialIcons]]
+name = "github"
+url = "http://github.com/argsno"
