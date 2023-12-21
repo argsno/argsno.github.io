@@ -60,6 +60,11 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
+      - name: Create CNAME
+        uses: "finnp/create-file-action@master"
+        env:
+            FILE_NAME: "./public/CNAME"
+            FILE_DATA: "blog.argsno.store"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
