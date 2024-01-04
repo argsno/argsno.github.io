@@ -10,3 +10,9 @@ Content = "Welcome to my blog..."
 [[params.socialIcons]]
 name = "github"
 url = "http://github.com/argsno"
+
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives/"
+weight = 10
