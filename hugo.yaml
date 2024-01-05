@@ -1,0 +1,31 @@
+baseURL: https://argsno.github.io/
+languageCode: zh-cn
+title: argsno
+theme: PaperMod
+params:
+  homeInfoParams:
+    Title: Hi there
+    Content: Welcome to my blog...
+  socialIcons:
+    - name: github
+      url: http://github.com/argsno
+menu:
+  main:
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 10
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 30
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
