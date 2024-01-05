@@ -34,6 +34,8 @@ date = 2024-01-04T17:17:05+08:00
 ## 技术
 [ChatGPT](https://chat.openai.com/)无疑是今天科技行业最重大的发明了，也是带来了很多的争议。
 [Hacker News](https://news.ycombinator.com/)、[Reddit - Dive into anything](https://www.reddit.com/)
+
+### 工具
 Obsidian、Z-library
 
 ## 2024 展望
