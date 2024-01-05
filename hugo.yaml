@@ -9,6 +9,8 @@ params:
   socialIcons:
     - name: github
       url: http://github.com/argsno
+  comments: true
+
 menu:
   main:
     - identifier: archives
@@ -29,3 +31,7 @@ outputs:
         - HTML
         - RSS
         - JSON # is necessary
+
+services:
+  disqus:
+    shortname: argsno
