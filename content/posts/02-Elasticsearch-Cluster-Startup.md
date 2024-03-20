@@ -1,5 +1,5 @@
 +++
-title = '02 Elasticsearch 集群启动简介'
+title = '02. Elasticsearch 集群启动简介'
 date = 2024-03-17T22:24:59+08:00
 draft = false
 +++
