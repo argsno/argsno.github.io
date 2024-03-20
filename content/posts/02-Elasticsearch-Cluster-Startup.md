@@ -4,6 +4,7 @@ date = 2024-03-17T22:24:59+08:00
 draft = false
 +++
 
+![cluster-startup@2x.png](https://cdn.jsdelivr.net/gh/iprocoder/images/202403202218692.png)
 
 ## 节点发现
 
